@@ -9,7 +9,7 @@ const serviceRoute = require('./router/service-router');
 const errorMiddleware = require('./middleware/error-middleware');
 
 const app = express();
-const port = process.env.PORT || 4000; // Correctly define the port
+const port = process.env.PORT || 4000; // Define port only once
 
 const corsOption = {
   origin: "http://localhost:5173", // Update this to your frontend's URL if deploying
