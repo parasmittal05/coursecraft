@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const corsOption = {
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5173", // Update this to your frontend's URL if deploying
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   credentials: true,
 };
