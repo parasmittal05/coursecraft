@@ -1,13 +1,15 @@
-require("dotenv").config();
+require('dotenv').config(); // Load environment variables
 const express = require('express');
 const cors = require('cors');
-const app = express();
-const authRoute = require("./router/auth-router");
+const connectDb = require('./utils/db');
+const authRoute = require('./router/auth-router');
 const contactRoute = require('./router/contact-router');
 const adminRoute = require('./router/admin-router');
 const serviceRoute = require('./router/service-router');
-const connectDb = require("./utils/db");
 const errorMiddleware = require('./middleware/error-middleware');
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 const corsOption = {
   origin: "http://localhost:5173",
@@ -15,7 +17,7 @@ const corsOption = {
   credentials: true,
 };
 
-app.use(cors(corsOption));  // Enable CORS
+app.use(cors(corsOption)); // Enable CORS
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
@@ -24,7 +26,7 @@ app.use("/api/admin", adminRoute);
 app.use(errorMiddleware);
 
 connectDb().then(() => {
-  app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
   });
 });
