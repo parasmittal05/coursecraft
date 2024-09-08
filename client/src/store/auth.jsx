@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async ()=>{
       try {
         setIsLoading(true);
-        const response = await  fetch("https://coursecraft-server.onrender.com/api/auth/user", {
+        const response = await  fetch("http://localhost:3000/api/auth/user", {
           method: "GET",
           headers: {
             Authorization: authorizationtoken,
