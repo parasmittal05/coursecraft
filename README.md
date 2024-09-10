@@ -1,2 +1,2 @@
 ﻿# Link
- https://coursecraft-client.onrender.com/
+https://shoppeestore.netlify.app/
