@@ -1,2 +1,2 @@
 ﻿# Link
-https://shoppeestore.netlify.app/
+https://coursenest.netlify.app/
